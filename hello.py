@@ -1,9 +1,12 @@
-def hello():
-  print("hello world")
+"""A simple Python script to demonstrate function usage."""
 
+def hello():
+    """Print 'hello world'."""
+    print("hello world")
 
 def come():
-  print("come here")
+    """Print 'come here'."""
+    print("come here")
 
-
-print(hello())
+# Call the hello function
+hello()
