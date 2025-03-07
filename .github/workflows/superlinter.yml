@@ -5,13 +5,16 @@ on: push
 jobs:
   super-lint:
     name: Lint code base
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+       os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run Super-Linter
-        uses: github/super-linter@v4
+        uses: github/super-linter@v5
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
